@@ -1,0 +1,46 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<p>
+This is a .NET 9 Blazor Web App with Global Server interactivity.
+</p>
+
+<p>
+We have an EditForm to edit a model with two InputText elements, one of which we want the binding to update on every keystroke.
+</p>
+
+<p>
+    With a standard input control we can do this with the syntax <code>@@bind:event="oninput"</code> but that doesn't work on an InputText. How can we achieve this?
+</p>
+
+<p>
+    One solution is to subclass the InputText control like we did in the InstantInputText component.
+</p>
+
+<h3>Please tell us about yourself</h3>
+
+<EditForm OnSubmit="SubmitForm" Model="person">
+    <InputText @bind-Value="person.Name" placeholder="Name" />
+    <br />
+    <InstantInputText @bind-Value="person.Email" placeholder="Email" />
+    <br />
+    <button type="submit">Submit</button>
+</EditForm>
+<h4>@person.Email</h4>
+
+@code {
+
+    Person person = new();
+
+    void SubmitForm()
+    {
+        // Handle the form submit here
+    }
+
+    public class Person
+    {
+        public string Name { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
+    }
+}

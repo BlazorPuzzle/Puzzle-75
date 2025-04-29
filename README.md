@@ -2,7 +2,7 @@
 
 Carl and Jeff want to know how to bind an `<InputText>` element in an `<EditForm>` that updates on every keystroke
 
-YouTube Video: https://youtu.be/
+YouTube Video: https://youtu.be/AdoyayflSek
 
 Blazor Puzzle Home Page: https://blazorpuzzle.com
 
